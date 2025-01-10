@@ -1,0 +1,46 @@
+let salary=parseInt(prompt("enter the Salary:"))
+      let experience=parseInt(prompt("enter the Expreince:"))
+      if(experience>10){
+        var totalsalary=(10/100)*salary
+        var amount=salary+totalsalary
+      
+        document.write("bonus amount"+totalsalary,"<br>")
+        document.write("Toatal Salary="+amount)
+      }
+      else if(experience>=6 && experience<=10){
+        let totalsalary=(8/100)*salary
+        let amount=salary+totalsalary
+        document.write("bonus amount:"+totalsalary,"<br>")
+        document.write("Toatal Salary:"+amount)
+
+      }
+      else if(experience<6){
+        let totalsalary=(5/100)*salary
+        let amount=salary+totalsalary
+        document.write("bonus amount:"+totalsalary,"<br>")
+        document.write("Toatal Salary:"+amount)
+      }
+      let a = pareint(prompt("enter a number :"))
+        
+        if(a%2 == 0 || a%3 == 0 && (a % 2==0 && a % 3 ==0)){
+            document.write("number is divible by 2 and 3 both")
+
+        //}
+        //let a = pareInt(prompt("enter a number 1:"))
+        //let b = pareInt(prompt("enter b number 2:"))
+        //let c = pareInt(prompt("enter c number 3:"))
+        //if (a>b && a>c ){
+           // document.write(`${a} + is greater number`)
+         
+        //}else if(b>a && b>c){
+            //document.write(`${b} + is greater number`)
+
+        //}else{
+            //document.write(`${c} + is greater number`)
+        //}
+        let a = parse(prompt("salary"))
+        let b = parse(prompt("year of service"))
+        if(b>10){
+            let c = a*0.5
+            let d = c+a
+            alert("after bouns salary"+d)
