@@ -1,0 +1,62 @@
+Functions:
+Written test:
+function greet() {
+        console.log("Hi chandu")
+      }
+      greet()
+      consolr.log("hi sai")
+      greet()
+
+       
+
+ex :function with parameters:
+function g(name){
+        console.log("hello"+name)
+      }
+      let name=prompt("enter your name?")
+      g(name)
+      
+
+function add(first,second){
+        console.log("The sum is: "+(first+second))
+      }
+
+    let first = parseInt(prompt("Enter first number: "))
+    let second = parseInt(prompt("Enter second number: "))
+    add(first,second)
+
+#example:
+sum=function(n1,n2){
+      let r=n1+n2
+      return r
+    }
+    console.log(sum(8,9))
+
+#write a program to check given number is prime or not
+#pattern
+#01 1 2 3 5 8 1 3
+#leap year
+#paildron #1 2 1 # 1 2 1
+#armstrong number
+#1 2 6
+#1^3+2^3+6^3=126==126
+#12 93
+  }
+
+      prime(10);
+      
+
+#prime number
+function prime(num){
+      for(let i=2;i<num;i++){
+          if(num%i==0){
+              console.log("not prime number");
+              return;
+          }
+      }
+      console.log("Prime Number"); 
+
+
+
+
+
