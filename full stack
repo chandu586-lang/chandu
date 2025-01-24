@@ -1,0 +1,40 @@
+
+arrow functions:
+es6 version:
+more readable and more structure:
+annomymous functions(lambda functions)
+without function  name but they are assigned to a variable 
+example:
+let x =(X,Y)=>{
+  console.log(X+Y)
+  }
+  x(20 ,30)
+  y(40 ,50)
+  
+      
+
+example:
+arrow functions with one arguments
+#with out using parenthesis
+Let greet=x =>console.log(x)
+Greet(‘hello’)
+Example:
+Let greet=x =>console.log(“hello”)
+Greet()
+ let age = 18;
+  let welcome =(age<18)
+  console.log("hi chandu")
+function task(){
+console.log(“Task1 : start”)
+}
+Function Task(){
+Console.log(“Task2 : Start”)
+}
+function greet(name,callback){
+      console.log('hello,${name}')
+      callback();
+    }
+    function sayGoodbye(){
+      console.log("Goodbye")
+
+
