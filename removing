@@ -1,0 +1,58 @@
+DOM:
+1)create elements
+2)multiple elements
+
+#how to remove child elements from parent node
+Removechild()-to remove the elements
+
+Ex:
+<h1>Removing childNode</h1>
+<h2>I am In hyd</h2>
+<ul>
+<li>gani</li>
+<li>ravi</li>
+<li>yash</li>
+</ul>
+const ul=document.querySelector('ul')
+const list=document.querySelectorAll('li')
+Console.log(ul)
+Console.log(lists)
+For(const list of lists){
+Console.log('Removing:$(list.textContent)')
+Ul.removeChild(list)
+Console.log(lists)
+Console.log(list)
+
+
+
+Ex:
+
+<body>
+    <ul>
+        <li>gani</li>
+        <li>ravi</li>
+        <li>yash</li>
+        </ul>
+        <script>
+        const ul=document.querySelector("ul")
+      const  list=document.querySelectorAll("li")
+      console.log(ul)
+      console.log(list)
+      for( const i of list){
+        console.log(removing:${i.textContent})
+        ul.removeChild(i)
+        console.log(i)
+      }
+      console.log(list)
+        </script>
+0/p:
+dom.html:17 <ul>​</ul>​
+dom.html:18 NodeList(3)
+dom.html:20 removing:gani
+dom.html:22 <li>​gani​</li>​
+dom.html:20 removing:ravi
+dom.html:22 <li>​ravi​</li>​
+dom.html:20 removing:yash
+dom.html:22 <li>​yash​</li>​
+dom.html:24 NodeList(3)
+dom.html:54 Live reload enabled.
