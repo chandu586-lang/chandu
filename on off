@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Blink with Timer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.5s;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .light-bulb {
+            width: 150px;
+            position: relative;
+            transition: transform 0.5s;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .timer {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" 
+             alt="Bulb" class="light-bulb" id="bulbImage"/>
+    </div>
+
+    <p class="timer" id="timerDisplay">Light ON Duration: 0s</p>
+    <button class="button" id="toggleButton" onClick="blinkLight()">Start Blinking</button>
+
+    <script>
+        let isOn = false;
+        let blinkCount = 0;
+        let interval;
+        let startTime;
+        let duration = 0;
+        let durationInterval;
+
+        const vibgyorColors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
+        let colorIndex = 0;
+
+        function toggleLight() {
+            const body = document.getElementById("body");
+            const bulbImage = document.getElementById("bulbImage");
+            const timerDisplay = document.getElementById("timerDisplay");
+
+            isOn = !isOn;
+            
+            if (isOn) {
+                // Start Timer
+                startTime = Date.now();
+                durationInterval = setInterval(() => {
+                    duration = ((Date.now() - startTime) / 1000).toFixed(1); // Calculate duration
+                    timerDisplay.innerText = Light ON Duration: ${duration}s;
+                }, 100); // Update every 100ms
+
+                bulbImage.style.transform = "translateX(0)"; // Center when on
+                body.style.backgroundColor = vibgyorColors[colorIndex]; 
+                bulbImage.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+                colorIndex = (colorIndex + 1) % vibgyorColors.length; // Cycle colors
+            } else {
+                // Stop Timer
+                clearInterval(durationInterval);
+                timerDisplay.innerText = "Light ON Duration: 0s"; // Reset Timer Display
+                
+                bulbImage.style.transform = "translateX(-100px)"; // Move left when off
+                body.style.backgroundColor = "black"; 
+                bulbImage.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+            }
+        }
+
+        function blinkLight() {
+            blinkCount = 0;
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                toggleLight();
+                blinkCount++;
+
+                if (blinkCount >= 10) { // 5 times (on/off = 1 cycle, so 10 total)
+                    clearInterval(interval);
+                }
+            }, 500); // Change light every 500ms
+        }
+    </script>
+</body>
+</html>
