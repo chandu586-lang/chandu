@@ -1,0 +1,40 @@
+import React, { createContext, useContext } from "react";
+import "./App.css";
+
+// Create context to hold the data
+const CountContext = createContext();
+
+function App() {
+  const data = "HELLO, I AM K.MALLIKARJUNARAO!!!";
+  return (
+    <div className="container">
+      <h1>Example for prop drilling</h1>
+      <CountContext.Provider value={data}>
+        <User1 />
+      </CountContext.Provider>
+    </div>
+  );
+}
+
+// User1 component
+function User1() {
+  return <User2 />;
+}
+
+// User2 component
+function User2() {
+  return <User3 />;
+}
+
+// User3 component
+function User3() {
+  return <User4 />;
+}
+
+// User4 component
+function User4() {
+  const data = useContext(CountContext);
+  return <div>{data}</div>;
+}
+
+export default App;
